@@ -1,0 +1,4 @@
+{
+    "jwtPrivateKey": "myflix_jwtPrivateKey",
+    "db": "myflix_db"
+}
