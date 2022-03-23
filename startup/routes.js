@@ -1,10 +1,9 @@
-//Added CORS routes..
 const express = require('express');
 const cors = require('cors');
-
 const users = require('../routes/usersRoutes');
 const subscription = require('../routes/subscriptionRoutes');
 const authentication = require('../routes/authentication');
+const error = require('../middleware/error');
 
 module.exports = function(app){
     app.use(express.json());
@@ -13,5 +12,5 @@ module.exports = function(app){
     app.use('/api/v1/me', users);
     app.use('/api/v1/subscription', subscription);
     app.use('/api/v1/authentication', authentication);
-   
+    app.use(error);
 }
