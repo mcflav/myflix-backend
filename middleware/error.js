@@ -1,6 +1,6 @@
 const winston = require('winston');
 
-module.exports = function(err,req,res,next){
+module.exports = function(err,res){
     winston.error(err.message, err);
-    res.status(400).send('Something failed. Error has been logged.');
+    res.status(500).send('Something failed. Error has been logged.');
 };

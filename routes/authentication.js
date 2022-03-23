@@ -1,13 +1,12 @@
-const mongoose = require('mongoose');
 const express = require('express');
 const bcrypt = require('bcrypt');
-const {User} = require('../models/userModel');
+const {User} = require('../models/subscriptionModel');
 const Joi = require('joi');
 const router = express.Router();
 const config = require('config');
-const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
-const _ = require('lodash');
+const expirationTime = 3600;
+
 
 router.post('/', async (req,res) => {
     const {error} = validate(req.body);
@@ -20,7 +19,7 @@ router.post('/', async (req,res) => {
     if(!validPassword) return res.status(401).send({auth: false, token: null});
 
     const token = jwt.sign({_id: user._id}, config.get('jwtPrivateKey'), {
-        expiresIn: 86400
+        expiresIn: expirationTime
     });
 
     res.status(200).send({ auth:true, token: token });

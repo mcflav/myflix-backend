@@ -8,7 +8,7 @@
     "start": "node index.js"
   },
   "engines": {
-    "node": "12.18.3"
+    "node": "16.13.2"
   },
   "author": "",
   "license": "ISC",
@@ -23,12 +23,12 @@
     "fawn": "^2.1.5",
     "helmet": "^4.6.0",
     "joi": "^13.7.0",
-    "joi-objectid": "^2.0.0",
+    "joi-objectid": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "mongoose": "^5.12.11",
     "winston": "^2.4.5",
-    "winston-mongodb": "^3.0.0"
+    "winston-mongodb": "^5.0.7"
   },
   "devDependencies": {
     "jest": "^27.0.6",
